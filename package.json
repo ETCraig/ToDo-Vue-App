@@ -1,0 +1,29 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Full Stack Vue & Express App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ETCraig/ToDo-Vue-App.git"
+  },
+  "author": "E.T. Craig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ETCraig/ToDo-Vue-App/issues"
+  },
+  "homepage": "https://github.com/ETCraig/ToDo-Vue-App#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
