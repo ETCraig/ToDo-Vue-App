@@ -1,17 +1,17 @@
-import axios from axios;
+import axios from 'axios';
 
-const url = 'http://localhost:5000/api/posts/';
+const url = 'http://localhost:5000/api/todos/';
 
-class PostService {
-    static getPosts() {
+class ToDoService {
+    static getToDos() {
         return new Promise(async (resolve, reject) => {
             try {
                 const res = await axios.get(url);
                 const data = res.data;
                 resolve(
-                    data.map(post => ({
-                        ...post,
-                        createdAt: new Date(post.createdAt)
+                    data.map(todo => ({
+                        ...todo,
+                        createdAt: new Date(todo.createdAt)
                     }))
                 );
             } catch(err) {
@@ -19,14 +19,14 @@ class PostService {
             }
         })
     }
-    static insertPost() {
+    static insertToDo() {
         return axios.post(url, {
             text: text
         });
     }
-    static deletePost(id) {
+    static deleteToDo(id) {
         return axios.delete(`${url}${id}`);
     }
 }
 
-export default PostService;
+export default ToDoService;

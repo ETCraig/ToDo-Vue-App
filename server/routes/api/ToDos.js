@@ -3,16 +3,16 @@ const mongodb = require('mongodb');
 
 const router = express.Router();
 
-const loadPostsCollection = require('../../../config/Keys')
+const loadToDosCollection = require('../../../config/Keys')
 
 router.get('/', async (req, res) => {
-    const posts = await loadPostsCollection();
-    res.send(await posts.find({}).toArray());
+    const todos = await loadToDosCollection();
+    res.send(await todos.find({}).toArray());
 });
 
 router.post('/', async (req, res) => {
-    const posts = await loadPostsCollection();
-    await posts.insertOne({
+    const todos = await loadToDosCollection();
+    await todos.insertOne({
         text: req.body.text,
         createdAt: new Date()
     });
@@ -20,8 +20,8 @@ router.post('/', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-    const posts = await loadPostsCollection();
-    await posts.deleteOne({_id: new mongodb.ObjectID(req.params.id)})
+    const todos = await loadToDosCollection();
+    await todos.deleteOne({_id: new mongodb.ObjectID(req.params.id)})
     res.status(200).send();
 });
 

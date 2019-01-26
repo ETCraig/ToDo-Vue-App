@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent />
+    <ToDoComponent />
   </div>
 </template>
 
 <script>
-import PostComponent from './components/PostComponent.vue'
+import ToDoComponent from './components/ToDoComponent.vue'
 
 export default {
   name: 'app',
   components: {
-    PostComponent
+    ToDoComponent
   }
 }
 </script>
